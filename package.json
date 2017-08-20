@@ -12,8 +12,9 @@
     "email": "kryptstorm@gmail.com",
     "url": "https://github.com/kryptstorm"
   },
-  "main": "src/index",
+  "main": "lib/index",
   "scripts": {
+    "build": "./node_modules/.bin/babel src --out-dir lib",
     "test": "./node_modules/.bin/mocha src/test.js"
   },
   "devDependencies": {

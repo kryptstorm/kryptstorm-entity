@@ -1,13 +1,10 @@
 // External modules
-const Seneca = require("seneca");
-const Bluebird = require("bluebird");
-const Chai = require("chai");
-
-// Get function
-const expect = Chai.expect;
+import Seneca from "seneca";
+import Bluebird from "bluebird";
+import { chai } from "chai";
 
 // Internal modules
-const XEntity = require(".");
+import XEntity from ".";
 
 // Defined function - what will return test app instance
 const App = fn =>

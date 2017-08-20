@@ -1,6 +1,6 @@
 // External modules
-const Bluebird = require("bluebird");
-const _ = require("lodash");
+import Bluebird from "bluebird";
+import _ from "lodash";
 
 // Default options of this plugin
 const defaultOptions = {
