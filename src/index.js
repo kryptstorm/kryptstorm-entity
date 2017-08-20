@@ -1,6 +1,6 @@
 // External modules
-import Bluebird from "bluebird";
-import _ from "lodash";
+const Bluebird = require("bluebird");
+const _ = require("lodash");
 
 // Default options of this plugin
 const defaultOptions = {
@@ -8,7 +8,7 @@ const defaultOptions = {
   fields$: ["id"] // Default return fields
 };
 
-export default function XEntity(options) {
+module.exports = function XEntity(options) {
   // Merge the options of user with plugin options
   // User's options have more important than plugin options
   const _limit =
@@ -176,7 +176,7 @@ export default function XEntity(options) {
   });
 
   return { name: "XEntity" };
-}
+};
 
 const _formatEntity = (ent, fields$) => {
   let result = {},
