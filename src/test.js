@@ -1,7 +1,7 @@
 // External modules
 import Seneca from "seneca";
 import Bluebird from "bluebird";
-import { chai } from "chai";
+import { expect } from "chai";
 
 // Internal modules
 import XEntity from ".";
