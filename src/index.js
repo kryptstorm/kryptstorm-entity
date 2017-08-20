@@ -159,7 +159,7 @@ export default function XEntity(options) {
    * @return connection to node-mongodb-native
    */
   Entity.asyncNative$ = function asyncNative$() {
-    const _asyncNative$ = Bluebird.promisify(entityClass.native$, {
+    const _asyncNative$ = Bluebird.promisify(Entity.native$, {
       context: this
     });
 
