@@ -96,7 +96,7 @@ module.exports = function XEntity(options) {
       query.fields$ = _fields;
     }
 
-    if (_.isNumber(query.limit$)) query.limit$ = _limit;
+    if (!_.isNumber(query.limit$)) query.limit$ = _limit;
 
     // Create async method for seneca.entity.load$
     const _asyncList$ = Bluebird.promisify(Entity.list$, {
