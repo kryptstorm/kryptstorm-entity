@@ -97,6 +97,7 @@ module.exports = function XEntity(options) {
     }
 
     if (!_.isNumber(query.limit$)) query.limit$ = _limit;
+    if (!_.isObject(query.sort$)) query.sort$ = { id: -1 };
 
     // Create async method for seneca.entity.load$
     const _asyncList$ = Bluebird.promisify(Entity.list$, {
