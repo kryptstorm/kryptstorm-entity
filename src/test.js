@@ -87,13 +87,15 @@ describe("XEntity - Basic", function() {
       .asyncList$({ fields$: returnFields })
       .then(loadedDogs => {
         // By default, result of asyncList$ will be convert to array of object
-        expect(loadedDogs).to.be.an("array");
-        expect(loadedDogs[0]).to.be.an("object");
+        expect(loadedDogs).to.be.an("object");
+        expect(loadedDogs.rows).to.be.an("array");
+        expect(loadedDogs.pages).to.be.an("number");
+        expect(loadedDogs.rows[0]).to.be.an("object");
 
         // All properties has been loaded
-        expect(loadedDogs[0].name).to.be.exist;
-        expect(loadedDogs[0].createdAt).to.be.exist;
-        expect(loadedDogs[0].status).to.be.exist;
+        expect(loadedDogs.rows[0].name).to.be.exist;
+        expect(loadedDogs.rows[0].createdAt).to.be.exist;
+        expect(loadedDogs.rows[0].status).to.be.exist;
 
         // Test is successful
         done();

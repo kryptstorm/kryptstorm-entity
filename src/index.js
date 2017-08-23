@@ -104,14 +104,16 @@ module.exports = function XEntity(options) {
       context: this
     });
 
-    // Return entity instance instead of entity object
-    if (returnEntity) return _asyncList$(query);
+    if (returnEntity)
+      return _asyncList$(query).then(ents =>
+        Bluebird.resolve({ rows: ents, pages: 50 })
+      );
 
     // Return array of entity object
     return _asyncList$(query).then(ents => {
-      let result = [];
-      _.each(ents, ent => result.push(_formatEntity(ent)));
-      return Bluebird.resolve(result);
+      let rows = [];
+      _.each(ents, ent => rows.push(_formatEntity(ent)));
+      return Bluebird.resolve({ rows, pages: 50 });
     });
   };
 
